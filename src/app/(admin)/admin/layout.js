@@ -1,11 +1,29 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-export function Layout() {
+export function Layout({ children }) {
   return (
     <div>
       <Tabs defaultValue="account" className="w-[400px]">
         <TabsList>
-          <TabsTrigger value="account">Account</TabsTrigger>
-          <TabsTrigger value="password">Password</TabsTrigger>
+          <Link>
+            {" "}
+            <TabsTrigger value="account">Dashboards</TabsTrigger>
+          </Link>
+          <Link>
+            {" "}
+            <TabsTrigger value="password">Courses</TabsTrigger>
+          </Link>
+          <Link>
+            {" "}
+            <TabsTrigger value="password">Batches</TabsTrigger>
+          </Link>
+          <Link>
+            {" "}
+            <TabsTrigger value="password">Trainers</TabsTrigger>
+          </Link>
+          <Link>
+            {" "}
+            <TabsTrigger value="password">Students</TabsTrigger>
+          </Link>
         </TabsList>
         <TabsContent value="account">
           Make changes to your account here.
