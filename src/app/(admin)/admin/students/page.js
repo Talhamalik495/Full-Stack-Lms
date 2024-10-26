@@ -1,7 +1,7 @@
 export default function Students() {
   return (
-    <div>
-      <h1>Batches</h1>
+    <div className="w-full">
+      <h1>Students</h1>
     </div>
   );
 }

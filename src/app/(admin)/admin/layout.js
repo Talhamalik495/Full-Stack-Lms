@@ -1,34 +1,36 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-export function Layout({ children }) {
+import Link from "next/link";
+export default function Layout({ children }) {
   return (
     <div>
-      <Tabs defaultValue="account" className="w-[400px]">
-        <TabsList>
-          <Link>
+      <Tabs defaultValue="account" className="w-full">
+        <TabsList className="w-full">
+          <Link href={`/admin/dashboard`}>
             {" "}
-            <TabsTrigger value="account">Dashboards</TabsTrigger>
+            <TabsTrigger value="dashboard">Dashboards</TabsTrigger>
           </Link>
-          <Link>
+          <Link href={`/admin/courses`}>
             {" "}
-            <TabsTrigger value="password">Courses</TabsTrigger>
+            <TabsTrigger value="course">Courses</TabsTrigger>
           </Link>
-          <Link>
+          <Link href={`/admin/batches`}>
             {" "}
-            <TabsTrigger value="password">Batches</TabsTrigger>
+            <TabsTrigger value="batches">Batches</TabsTrigger>
           </Link>
-          <Link>
+          <Link href={`/admin/trainers`}>
             {" "}
-            <TabsTrigger value="password">Trainers</TabsTrigger>
+            <TabsTrigger value="trainers">Trainers</TabsTrigger>
           </Link>
-          <Link>
+          <Link href={`/admin/students`}>
             {" "}
-            <TabsTrigger value="password">Students</TabsTrigger>
+            <TabsTrigger value="students">Students</TabsTrigger>
           </Link>
         </TabsList>
-        <TabsContent value="account">
-          Make changes to your account here.
-        </TabsContent>
-        <TabsContent value="password">Change your password here.</TabsContent>
+        <TabsContent value="dashboard">{children}</TabsContent>
+        <TabsContent value="courses">{children}</TabsContent>
+        <TabsContent value="batches">{children}</TabsContent>
+        <TabsContent value="trainers">{children}</TabsContent>
+        <TabsContent value="students">{children}</TabsContent>
       </Tabs>
     </div>
   );

@@ -1,7 +1,7 @@
 export default function Trainers() {
-    return (
-        <div>
-            <h1>Batches</h1>
-        </div>
-    )
+  return (
+    <div className="w-full">
+      <h1>Trainers</h1>
+    </div>
+  );
 }
